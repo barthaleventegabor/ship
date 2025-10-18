@@ -1,1 +1,27 @@
-<p>shipment works!</p>
+<h1>Szállítmányok kezelése</h1>
+
+<table class="table table-striped table-secondary">
+    <thead>
+        <tr>
+            <th class="table-primary" >ID</th>
+            <th>Szállítmány ID</th>
+            <th>Küldás dátuma</th>
+            <th>Érkezés dátuma</th>
+            <th>Címzett</th>
+            <th>Célváros</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(shipment of shipments; track shipment.id) {
+            <tr>
+                <td class="table-primary">{{shipment.id}}</td>
+                <td>{{shipment.shipmentId}}</td>
+                <td>{{shipment.sentDate}}</td>
+                <td>{{shipment.endDate}}</td>
+                <td>{{shipment.addressee}}</td>
+                <td>{{shipment.targetCity}}</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
