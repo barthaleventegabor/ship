@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../shared/api.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-shipment',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './shipment.component.html',
   styleUrl: './shipment.component.css'
 })
@@ -20,6 +20,13 @@ export class ShipmentComponent {
 
   ngOnInit(){
     this.getShipments()
+    this.shipmentForm = this.builder.group({
+      shipmentId :"",
+      sentDate :"",
+      endDate :"",
+      addressee :"",
+      targetCity :""
+    })
   }
 
   getShipments(){
@@ -29,6 +36,10 @@ export class ShipmentComponent {
         this.shipments = result.data
       }
     })
+  }
+
+  addShipment(){
+    console.log("xd")
   }
 
 }

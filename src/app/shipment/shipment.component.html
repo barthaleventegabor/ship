@@ -1,5 +1,10 @@
 <h1>Szállítmányok kezelése</h1>
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#addModal">
+  Hozzáad
+</button>
+
 <table class="table table-striped table-secondary">
     <thead>
         <tr>
@@ -25,3 +30,55 @@
         }
     </tbody>
 </table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Szállítmány hozzáadása</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup] = "shipmentForm" (ngSubmit) = "addShipment()" id="shipmentForm">
+
+            <div>
+                <label for="shipmentId" class="form-label">Szállítmány ID</label>
+                <input type="text" id="shipmentId" class="form-control" formControlName = "shipmentId"
+                placeholder="minta: aaa-123">
+            </div>
+
+            <div>
+                <label for="sentDate" class="form-label">Küldás dátuma</label>
+                <input type="text" id="sentDate" class="form-control" formControlName = "sentDate"
+                placeholder="yyyy-mm-dd">
+            </div>
+
+            <div>
+                <label for="endDate" class="form-label">Érkezés dátuma</label>
+                <input type="text" id="endDate" class="form-control" formControlName = "endDate"
+                placeholder="yyyy-mm-dd">
+            </div>
+
+            <div>
+                <label for="addressee" class="form-label">Címzett</label>
+                <input type="text" id="addressee" class="form-control" formControlName = "addressee"
+                placeholder="minta: Xy Group">
+            </div>
+
+            <div>
+                <label for="targetCity" class="form-label">	Célváros</label>
+                <input type="text" id="targetCity" class="form-control" formControlName = "targetCity"
+                placeholder="minta: Budapest">
+            </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+        <button type="submit" class="btn btn-primary" form="shipmentForm" data-bs-dismiss="modal">Ment</button>
+      </div>
+    </div>
+  </div>
+</div>
