@@ -14,4 +14,10 @@ export class ApiService {
     const url = this.host + "shipments"
     return this.http.get(url)
   }
+
+  addShipment(shipment :any){
+    const url = this.host + "shipments"
+    return this.http.post(url , shipment)
+  }
+
 }
