@@ -5,12 +5,19 @@
   Hozzáad
 </button>
 
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-secondary mb-2 float-end" data-bs-toggle="modal" data-bs-target="#profileModal">
+  Névjegy
+</button>
+
+
 <table class="table table-striped table-secondary">
     <thead>
         <tr>
             <th class="table-primary" >ID</th>
             <th>Szállítmány ID</th>
-            <th>Küldás dátuma</th>
+            <th>Küldés dátuma</th>
             <th>Érkezés dátuma</th>
             <th>Címzett</th>
             <th>Célváros</th>
@@ -37,7 +44,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Szállítmány hozzáadása</h1>
+        <h1 class="modal-title fs-5" id="addModal">Szállítmány hozzáadása</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -50,7 +57,7 @@
             </div>
 
             <div>
-                <label for="sentDate" class="form-label">Küldás dátuma</label>
+                <label for="sentDate" class="form-label">Küldés dátuma</label>
                 <input type="text" id="sentDate" class="form-control" formControlName = "sentDate"
                 placeholder="yyyy-mm-dd">
             </div>
@@ -78,6 +85,30 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
         <button type="submit" class="btn btn-primary" form="shipmentForm" data-bs-dismiss="modal">Ment</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="profileModal">Névjegy</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Név: Bartha Levente Gábor</p>
+        <p>Készítés dátuma: 2025.10.18</p>
+        <p>Csoport: II-N</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
       </div>
     </div>
   </div>
