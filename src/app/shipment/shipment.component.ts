@@ -1,3 +1,7 @@
+// Név: Bartha Levente Gábor
+// Készítés dátuma: 2025.10.18
+// Csoport: II-N
+
 import { Component } from '@angular/core';
 import { ApiService } from '../shared/api.service';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';

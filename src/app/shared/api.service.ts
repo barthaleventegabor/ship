@@ -1,3 +1,6 @@
+// Név: Bartha Levente Gábor
+// Készítés dátuma: 2025.10.18
+// Csoport: II-N
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
