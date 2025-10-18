@@ -39,7 +39,19 @@ export class ShipmentComponent {
   }
 
   addShipment(){
-    console.log("xd")
+    const newShipment = {
+      shipmentId : this.shipmentForm.value.shipmentId ,
+      sentDate : this.shipmentForm.value.sentDate ,
+      endDate : this.shipmentForm.value.endDate ,
+      addressee : this.shipmentForm.value.addressee ,
+      targetCity : this.shipmentForm.value.targetCity 
+    }
+    this.api.addShipment(newShipment).subscribe({
+      next : (result) =>{
+        this.getShipments()
+        this.shipmentForm.reset()
+      }
+    })
   }
 
 }
